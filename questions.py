@@ -21,14 +21,14 @@ correct_answers_index = [1, 2, 0, 3, 1]
 # Se combinan las preguntas, las respuestas y las respuestas correctas en una lista nueva
 questions_to_ask = list(zip(questions, answers, correct_answers_index))
 
-# Se seleccionan aleatoriamente 3 preguntas de la lista anterior, se deja de usar índices
-questions_to_ask = random.choices(questions_to_ask, k=3)
+# Se seleccionan aleatoriamente 3 preguntas de la lista anterior, se deja de usar índices. Uso random.sample() para que no se repitan las preguntas
+questions_to_ask = random.sample(questions_to_ask, k=3)
 
 score = 0
 
 # El usuario deberá contestar 3 preguntas. En cada iteración se muestra una tupla de la lista nueva
 for una_pregunta, opciones_respuestas, respuesta_correcta in questions_to_ask:
-    
+
     # Se muestra una pregunta y sus posibles respuestas
     print(una_pregunta)
     for i, answer in enumerate(opciones_respuestas):
